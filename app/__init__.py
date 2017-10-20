@@ -1,4 +1,5 @@
 from flask import Flask
+from .config import DevConfig
 
 #initializing the applictaion 
 app = Flask(__name__,instance_relative_config = True)#when the instance is created we want to access the instance folder
