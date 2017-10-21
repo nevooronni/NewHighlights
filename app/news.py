@@ -12,9 +12,8 @@ def index():
 	#getting general news
 	general_news = get_news_source('general')
 	entertainment_news = get_news_source('entertainment')
-	sports_news = get_news_source('sports')
 	politics_news = get_news_source('politics')
 	technology_news =  get_news_source('technology')
 	business_news = get_news_source('business')
 	title = 'Home - welcome to News Highlight the best news source website there is.'
-	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,sports = sports_news,politics = politics_news,technology = technology_news,business = business_news)
+	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,politics = politics_news,technology = technology_news,business = business_news)
