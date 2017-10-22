@@ -1,7 +1,6 @@
-from flask import render_template
-from app import app#loads the app instance from the app folder
-from .request import get_news_source
-from .request import get_newsource_articles
+from flask import render_template,request,redirect,url_for
+from . import main#loads the app instance from the app folder
+from ..request import get_news_source,get_newsource_articles#python relative import system two dots in other packages
 
 #news
 @app.route('/')#route decorator int: tranforms the content into an integer

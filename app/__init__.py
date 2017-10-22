@@ -1,15 +1,24 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from .config import DevConfig
+from .config import config_options
 
-#initializing the applictaion 
-app = Flask(__name__,instance_relative_config = True)#when the instance is created we want to access the instance folder
+bootstrap = Bootstrap()
 
-#setting up configuration 
-app.config.from_object(DevConfig)#import the devconfig sublass to use in our app  and use the app.config.from_object
-app.config.from_pyfile('config.py')#connects to config.py all all of its contencts appended to app.config
+def create_app(config_name):
+	app = Flask(__name__)
 
-#initialize flask extensions
-bootstrap = Bootstrap(app)#we initialize the bootrap class by passing in the app instance hwo most extensions are initialized in flask
+	#creating the app configurations
+	app.config.from_object(config_options(config_name))
 
-from app import news
+	#initializing flask extension
+	bootstrap.init_app(app)
+
+	#registering the blueprint
+	from .main import main as main_blueprint
+	app.register_blueprint(main_blueprint)
+
+	#setting config
+	from .requests import configure_request
+	configure_request(app)#pass in the app instance
+
+	return app

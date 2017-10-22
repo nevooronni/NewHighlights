@@ -1,15 +1,17 @@
 from app import app
 import urllib.request,json#module help us create a connection to our api url and json module will format the json response to a python dictonary
-from .models import news#from package models import module news and select class news\
-
-News = news.News
-Articles = news.Articles
+from .models import News,Articles#from package models import module news and select class news
 
 #Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 #Getting the news base url
-base_url = app.config['NEWS_API_BASE_URL']#we then access our app config objects by app.config['name_of_object']
+base_url = None#we then access our app config objects by app.config['name_of_object']
+
+def configure_request(app):
+	global api_key,base_url
+	api_key = app.config['NEWS_API_KEY']
+	base_ulr = app.congfig['NEWS_API_BASE_URL']
 
 def get_news_source(category):
 	"""
