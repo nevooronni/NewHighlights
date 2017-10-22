@@ -1,7 +1,9 @@
 {% macro displayNewsList(news_list) %}
   
   {% for news in news_list %}
-    <li>{{ news.name}} {{ news.url }} {{news.category }} <br> {{ news.description }}</li><br>
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-source">
+      <li class="text_center"><a href="/news/{{news.id}}">Name:{{ news.name }} <br>Homepage:{{ news.url }} <br>Category:{{news.category }} <br> About:{{ news.description }}</a></li>
+    </div>
   {% endfor %}
 
 {% endmacro %}

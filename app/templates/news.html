@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
 <!--content block-->
 {% block content %}
 
-<h1>Hello News {{ id }}</h1>
+<div class="container">
 
-{% block content %}
+  <!-- newsource descritption section -->
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      {{ news.name }} <br> {{ news.category}} <br> {{ news.description}}
+    </div>
+
+    <!--new articles section-->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <ul>
+        <li>{{ macro.displayArticles() }}</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

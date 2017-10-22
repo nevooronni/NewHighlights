@@ -15,11 +15,11 @@ class Articles:
 	Articles to define articles from a specific new source
 	"""
 
-	def __init__(self,author,title,description,url,image,time):
+	def __init__(self,author,title,description,link,image,time):
 		self.author = author
 		self.title = title
 		self.description = description
-		self.url = url
+		self.link = link
 		self.image = image
 		self.time = time
 
