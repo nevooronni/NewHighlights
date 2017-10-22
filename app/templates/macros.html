@@ -10,7 +10,7 @@
 {% endmacro %}
 
 <!--articles macro-->
-{% macro displayArticleList(news_source_result_list) %}
+{% macro displayArticlesList(news_source_result_list) %}
   
   {% for article in news_source_result_list %}
     <img src="{{ article.image }}" alt="{{ article.title }}" class="img-responsive"><br>

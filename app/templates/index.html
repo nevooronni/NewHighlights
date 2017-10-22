@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
+<!--styles block-->
+{% block sytles %}
+  {{ super() }}<!--tells jinja not to override the content here-->
+  <link rel="stylesheet" hrsef="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
 <!--content block -->
 {% block content %}
 
