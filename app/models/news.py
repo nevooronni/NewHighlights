@@ -9,3 +9,17 @@ class News:
 		self.description = description
 		self.url = url
 		self.category = category
+
+class Articles:
+	"""
+	Articles to define articles from a specific new source
+	"""
+
+	def __init__(self,author,title,description,url,image,time):
+		self.author = author
+		self.title = title
+		self.description = description
+		self.url = url
+		self.image = image
+		self.time = time
+
