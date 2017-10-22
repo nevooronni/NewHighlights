@@ -65,9 +65,9 @@ def get_newsource_articles(id):
 			news_source_result_list = news_source_articles_response['articles']
 			news_source_results = process_articles_results(news_source_result_list)
 		
-			return news_source_results		
+	return news_source_results		
 
-def process_articles_results(news_source_result_list):
+def process_articles_results(articles_list):
 	"""
 	function that process the news articles list dictionary and tunrs them to a list of objects
 	
@@ -78,7 +78,7 @@ def process_articles_results(news_source_result_list):
 		news_source_results: A lists of news objects
 	"""
 	news_source_results = []
-	for article in news_source_results:
+	for article in articles_list:
 		author = article.get('author')
 		title	= article.get('title')
 		description = article.get('description')
@@ -87,7 +87,7 @@ def process_articles_results(news_source_result_list):
 		time = article.get('publishedAt')
 
 		if image:
-			articles_object = Articles(author,title,description,url,image,time)
+			articles_object = Articles(author,title,description,link,image,time)
 			news_source_results.append(articles_object)
 
 	return news_source_results	

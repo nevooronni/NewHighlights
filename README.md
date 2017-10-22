@@ -4,7 +4,7 @@
 This is a web app that allows any user to get and read news articles from the top media companies around the world instantly in one place.Each news source has it's own list of articles.
 
 ## AUTHOR
-Neville Oronni
+[Neville Oronni](https://github.com/mwerumuchai)
 
 ## SPECIFICATIONS
 | Behaviour | Input | Output |
