@@ -1,4 +1,3 @@
-from app import app
 import urllib.request,json#module help us create a connection to our api url and json module will format the json response to a python dictonary
 from .models import News,Articles#from package models import module news and select class news
 
@@ -11,13 +10,13 @@ base_url = None#we then access our app config objects by app.config['name_of_obj
 def configure_request(app):
 	global api_key,base_url
 	api_key = app.config['NEWS_API_KEY']
-	base_ulr = app.congfig['NEWS_API_BASE_URL']
+	base_ulr = app.config['NEWS_API_BASE_URL']
 
 def get_news_source(category):
 	"""
 	function that gets the json reponse to our url request
 	"""
-	get_news_url = base_url.format(category,api_key)#takes news by category and places this at the end of our api key
+	get_news_url = 'https://newsapi.org/v1/sources'.format(category,api_key)#takes news by category and places this at the end of our api key
 
 
 	with urllib.request.urlopen(get_news_url) as url:#send a request using the get_news_url as final url

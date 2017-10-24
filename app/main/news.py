@@ -3,7 +3,7 @@ from . import main#loads the app instance from the app folder
 from ..request import get_news_source,get_newsource_articles#python relative import system two dots in other packages
 
 #news
-@app.route('/')#route decorator int: tranforms the content into an integer
+@main.route('/')#route decorator int: tranforms the content into an integer
 def index():
 	"""
 	new root page functioni return the page with all of its dat
@@ -19,7 +19,7 @@ def index():
 	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,politics = politics_news,technology = technology_news,business = business_news)
 
 #dynamically route our articles templates
-@app.route('/news/<id>')
+@main.route('/news/<id>')
 def news(id):
 	"""
 	function that return a list of news articlses belonging to a specific news source

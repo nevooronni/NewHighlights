@@ -1,3 +1,3 @@
 from flask import Blueprint
 main = Blueprint('main',__name__)
-from import news,errors
+from . import news,error

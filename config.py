@@ -8,7 +8,7 @@ class Config:
 	NEWS_API_BASE_URL = 'https://newsapi.org/v1/sources?language=en&apiKey={}'
 	NEWS_API_KEY = os.environ.get('NEWS_API_KEY')#get our api key using the os module
 
-class prodConfig(Config):
+class ProdConfig(Config):
 	"""
 	production configuration child class 
 
@@ -27,8 +27,8 @@ class DevConfig(Config):
 
 	DEBUG = True
 
-	#dictionary to help us access different configuration options
-	config_options = {
-	'development':DevConfig,
-	'production':ProdConfig
-	}
+#dictionary to help us access different configuration options
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
